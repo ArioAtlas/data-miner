@@ -39,6 +39,7 @@
     "ansi-chart": "^0.0.5",
     "fast-csv": "^5.0.2",
     "lodash": "^4.17.21",
+    "ml-matrix": "^6.12.0",
     "seedrandom": "^3.0.5"
   }
 }

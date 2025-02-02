@@ -16,7 +16,7 @@ export class Hierarchical {
     this.options = {
       clusters: options.clusters ?? 2,
       linkage: options.linkage ?? 'complete',
-      distance: options.distance ?? Distance.euclideanDistance,
+      distance: options.distance ?? Distance.euclidean,
     };
   }
 

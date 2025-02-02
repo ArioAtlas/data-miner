@@ -6,7 +6,7 @@
 ```ts
 import { Distance } from './distance';
 
-const distance = Distance.euclideanDistance([1, 2], [3, 4]);
+const distance = Distance.euclidean([1, 2], [3, 4]);
 console.log(distance);  // 2.8284271247461903
 ```
 
@@ -18,7 +18,7 @@ console.log(distance);  // 2.8284271247461903
 ```ts
 import { Distance } from './distance';
 
-const distance = Distance.manhattanDistance([1, 2], [3, 4]);
+const distance = Distance.manhattan([1, 2], [3, 4]);
 console.log(distance);  // 4
 ```
 
@@ -41,7 +41,7 @@ the **Levenshtein distance** is a string metric for measuring the difference bet
 ```ts
 import { Distance } from './distance';
 
-const distance = Distance.levenshteinDistance('kitten', 'sitting');
+const distance = Distance.levenshtein('kitten', 'sitting');
 console.log(distance);  // 3
 ```
 

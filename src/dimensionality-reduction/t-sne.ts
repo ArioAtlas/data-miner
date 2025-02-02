@@ -1,3 +1,4 @@
+import { Distance } from '@/base/distance';
 import { TSNEOptions } from '@/interfaces/tsne-options.interface';
 import { TSNEResult } from '@/interfaces/tsne-result.interface';
 import { alea } from 'seedrandom';
@@ -23,7 +24,7 @@ export class TSNE {
     this.maxIterations = options.maxIterations ?? 1000;
     this.earlyExaggeration = options.earlyExaggeration ?? 12;
     this.earlyExaggerationIter = options.earlyExaggerationIter ?? 250;
-    this.distanceFn = options.distanceFn ?? this.squaredEuclideanDistance;
+    this.distanceFn = options.distanceFn ?? Distance.squaredEuclidean;
 
     if (typeof options.randomSeed === 'number') {
       this.random = alea(options.randomSeed.toString());
@@ -237,18 +238,6 @@ export class TSNE {
       }
     }
     return distMat;
-  }
-
-  /**
-   * Default squared Euclidean distance.
-   */
-  private squaredEuclideanDistance(a: number[], b: number[]): number {
-    let sum = 0;
-    for (let i = 0; i < a.length; i++) {
-      const diff = a[i] - b[i];
-      sum += diff * diff;
-    }
-    return sum;
   }
 
   /**

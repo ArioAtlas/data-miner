@@ -1,23 +1,24 @@
 import { LevenshteinDistanceOption } from '@/interfaces/levenshtein-distance-option.interface';
 
-const DEFAULT_DELETION_COST = 1;
-const DEFAULT_INSERTION_COST = 1;
-const DEFAULT_SUBSTITUTION_COST = 1;
-
 export class Distance {
-  public static euclideanDistance(a: number[], b: number[]): number {
+  public static squaredEuclidean(a: number[], b: number[]): number {
     if (a.length !== b.length) {
       throw new Error('Points must have the same dimension');
     }
-    let sumSquared = 0;
+
+    let sum = 0;
     for (let i = 0; i < a.length; i++) {
       const diff = a[i] - b[i];
-      sumSquared += diff * diff;
+      sum += diff * diff;
     }
-    return Math.sqrt(sumSquared);
+    return sum;
   }
 
-  public static manhattanDistance(a: number[], b: number[]): number {
+  public static euclidean(a: number[], b: number[]): number {
+    return Math.sqrt(Distance.squaredEuclidean(a, b));
+  }
+
+  public static manhattan(a: number[], b: number[]): number {
     if (a.length !== b.length) {
       throw new Error('Points must have the same dimension');
     }
@@ -32,10 +33,10 @@ export class Distance {
    * Computes the Levenshtein distance (edit distance) between two strings.
    * By default, each operation (deletion, insertion, substitution) costs 1.
    */
-  public static levenshteinDistance(first: string, second: string, options: LevenshteinDistanceOption = {}): number {
-    const deletionCost = options.deletionCost ?? DEFAULT_DELETION_COST;
-    const insertionCost = options.insertionCost ?? DEFAULT_INSERTION_COST;
-    const substitutionCost = options.substitutionCost ?? DEFAULT_SUBSTITUTION_COST;
+  public static levenshtein(first: string, second: string, options: LevenshteinDistanceOption = {}): number {
+    const deletionCost = options.deletionCost ?? 1;
+    const insertionCost = options.insertionCost ?? 1;
+    const substitutionCost = options.substitutionCost ?? 1;
 
     // Cache for memoization
     const cache = new Map<string, number>();

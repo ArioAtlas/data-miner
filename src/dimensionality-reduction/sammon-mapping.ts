@@ -14,7 +14,7 @@ export class SammonMapping {
     this.maxIterations = options.maxIterations ?? 20;
     this.learningRate = options.learningRate ?? 0.3;
     this.projectionDimension = options.projectionDimension ?? 2;
-    this.distanceFn = options.distanceFn ?? Distance.euclideanDistance;
+    this.distanceFn = options.distanceFn ?? Distance.euclidean;
 
     if (typeof options.randomSeed === 'number') {
       this.random = alea(options.randomSeed.toString());

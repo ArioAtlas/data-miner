@@ -14,7 +14,7 @@ export class KMeans {
     if (!this.options.k) this.options.k = 3;
     if (!this.options.maxIterations) this.options.maxIterations = 100;
     if (!this.options.distance) {
-      this.options.distance = Distance.euclideanDistance;
+      this.options.distance = Distance.euclidean;
     }
   }
 

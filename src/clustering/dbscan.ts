@@ -14,7 +14,7 @@ export class DBSCAN {
   constructor(private options: DBScanOptions = {}) {
     if (!this.options.epsilon) this.options.epsilon = 0.2;
     if (!this.options.minPoints) this.options.minPoints = 20;
-    if (!this.options.distance) this.options.distance = Distance.euclideanDistance;
+    if (!this.options.distance) this.options.distance = Distance.euclidean;
   }
 
   public fit(data: number[][]): DBScanResult {

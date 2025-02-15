@@ -4,6 +4,11 @@ import { DBScanResult } from '@/interfaces/db-scan-result.interface';
 import { DistanceFunction } from '@/types/distance-function.type';
 import { union } from 'lodash';
 
+/**
+ * **Density-Based Spatial Clustering of Applications with Noise (DBSCAN)*
+ * - A clustering algorithm that can handle noise and outliers.
+ * - This algorithm is good for data which contains clusters of similar density.
+ */
 export class DBSCAN {
   private points: number[][] = [];
   private visited: boolean[] = [];

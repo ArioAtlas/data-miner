@@ -1,6 +1,12 @@
 import { PageRankOptions } from '@/interfaces/page-rank-options.interface';
 import { PageRankResult } from '@/interfaces/page-rank-result.interface';
 
+/**
+ * **PageRank**
+ * - An algorithm that ranks nodes in a graph based on their importance.
+ * - A way of measuring the importance of website pages used by Google Search.
+ * - According to Google: [PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is. The underlying assumption is that more important websites are likely to receive more links from other websites.](https://web.archive.org/web/20111104131332/https://www.google.com/competition/howgooglesearchworks.html)
+ */
 export class PageRank {
   private beta: number;
   private maxIterations: number;

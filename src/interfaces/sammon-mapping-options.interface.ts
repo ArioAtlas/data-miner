@@ -1,7 +1,7 @@
 export interface SammonMappingOptions {
-  /** Number of iterations for the gradient descent loop (default: 100) */
+  /** Number of iterations for the gradient descent loop (default: 20) */
   maxIterations?: number;
-  /** Learning rate for each gradient descent step (default: 0.01) */
+  /** Learning rate for each gradient descent step (default: 0.3) */
   learningRate?: number;
   /** Target dimensionality for the projection (default: 2) */
   projectionDimension?: number;

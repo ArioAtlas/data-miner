@@ -1,0 +1,42 @@
+name: Publish to npm
+
+on:
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**/package.json'
+      - '**/package-lock.json'
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Bump patch version
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          npm version patch -m "CI: Bump version to %s"
+
+      - name: Push changes
+        run: |
+          git push --follow-tags origin HEAD:main
+
+      - name: Publish to npm
+        run: |
+          npm run build
+          cp dist/* ./
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

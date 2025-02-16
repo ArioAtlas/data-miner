@@ -36,7 +36,7 @@ jobs:
       - name: Publish to npm
         run: |
           npm run build
-          cp dist/* ./
+          cp -r dist/* ./
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

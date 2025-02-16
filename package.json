@@ -8,8 +8,7 @@
     "start": "npm run build && node dist/index.js",
     "start:dev": "ts-node -r tsconfig-paths/register src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ./tsconfig.build.json",
-    "publish": "npm run build && npm publish"
+    "build": "tsc -p ./tsconfig.build.json"
   },
   "repository": {
     "type": "git",

@@ -1,1 +1,1 @@
-# data-miner
+# entropyx

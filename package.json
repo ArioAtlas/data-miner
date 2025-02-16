@@ -1,6 +1,6 @@
 {
   "name": "data-mining",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple data mining library, written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,10 +33,7 @@
     "fast-newman",
     "sammon-mapping"
   ],
-  "author": {
-    "name": "Omid Golshan",
-    "email": "omid.gt21@gmail.com"
-  },
+  "author": "",
   "devDependencies": {
     "@types/jest": "^29.5.2",
     "@types/lodash": "^4.17.14",

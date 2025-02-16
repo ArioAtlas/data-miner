@@ -1,7 +1,7 @@
 {
   "name": "data-mining",
   "version": "0.0.1",
-  "description": "",
+  "description": "A simple data mining library, written in TypeScript",
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node dist/index.js",
@@ -9,6 +9,32 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p ./tsconfig.build.json",
     "publish": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArioAtlas/data-mining.git"
+  },
+  "keywords": [
+    "machine-library",
+    "ml",
+    "clustering",
+    "community-detection",
+    "network",
+    "distance",
+    "dimensionality-reduction",
+    "ranking",
+    "kmeans",
+    "dbscan",
+    "hierarchical",
+    "pca",
+    "t-sne",
+    "pagerank",
+    "fast-newman",
+    "sammon-mapping"
+  ],
+  "author": {
+    "name": "Omid Golshan",
+    "email": "omid.gt21@gmail.com"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",

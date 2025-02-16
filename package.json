@@ -1,5 +1,5 @@
 {
-  "name": "data-mining",
+  "name": "data-miner",
   "version": "0.0.4",
   "description": "A simple data mining library, written in TypeScript",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArioAtlas/data-mining.git"
+    "url": "git+https://github.com/ArioAtlas/data-miner.git"
   },
   "keywords": [
     "machine-library",
